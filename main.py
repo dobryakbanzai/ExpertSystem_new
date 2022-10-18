@@ -8,7 +8,9 @@ import WorkWithDatabase as db
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    db.create_bd()
     db.read_info_from_bd()
+    db.writing_info_in_bd()
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
