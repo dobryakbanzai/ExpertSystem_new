@@ -43,8 +43,8 @@ def writing_info_in_bd(word, array,mylist):
             add_info('Центральный',word, f, headersCSV)
             print('add '+ word.getMean())
         if word.getRegion()=='Южный':
-            add_info(word,f,headersCSV)
-            print('add '+ word)
+            add_info('Южный',word,f,headersCSV)
+
     f.close()
     mylist.append(word)
     array.append(word)
