@@ -7,6 +7,7 @@ from Classes import Word
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import WordSearch as ws
+from collections import Counter
 
 
 def print_hi(name):
@@ -21,8 +22,20 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    print(ws.get_first_5('баклон'))
+    # print_hi('PyCharm')
+    s = ws.get_first_5('баклон')
+
+    for elem in s:
+        print(elem)
+
+
+
+
+
+    print('----------------------------------------')
+    # print(ws.get_all_wrd_in_reg('Северный'))
+    for elem in ws.get_all_wrd_in_reg('Северный'):
+        print(elem)
 
 # wordsClassesindex(a[0])
 

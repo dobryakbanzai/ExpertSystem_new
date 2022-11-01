@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN PAGE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+<!--        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" method="post" action="index">-->
+<!--          <input type="search" name = "search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">-->
+<!--        </form>-->
+
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2">USER</button>
+          <button type="button" class="btn btn-warning">ADMIN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga porro nostrum ut, eveniet reprehenderit quisquam quas repellendus minus doloremque, ipsa tempora ipsam, harum, cupiditate facilis magnam dolore. Ipsum, qui, cumque.</p>
+</body>
+</html><table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Слово</th>
+      <th scope="col">Значение</th>
+      <th scope="col">Регион</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for el in words%}
+    <tr>
+      <td>{{el.wrd}}</td>
+      <td>{{el.mean}}</td>
+      <td>{{el.region}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

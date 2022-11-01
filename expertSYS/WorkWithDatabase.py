@@ -8,7 +8,7 @@ from Classes import Word
 
 def read_info_from_bd():
     columns = defaultdict(list)  # each value in each column is appended to a list
-    with open('db.csv') as f:
+    with open('D:\папки\pythonProject\db.csv') as f:
         reader = csv.reader(f,delimiter=';')
         next(reader)
         for row in reader:
@@ -26,7 +26,7 @@ def read_info_from_bd():
     f.close()
 
     array=columns[0]+columns[2]+columns[4]
-    return array,mylist
+    return array, mylist
 
 
 # Запись в бд
