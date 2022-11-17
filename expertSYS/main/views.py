@@ -18,13 +18,19 @@ import main
 #         return context
 
 def index(request):
-    word = request.GET.get('query')
-    tag = 0
-    if word != '' and word != None:
+    search_by = request.GET.get('search_by')
+    if search_by == "reg":
+        reg = request.GET.get('select')
         tag = 1
-        words = ws.get_first_5(word)
+        words = ws.get_all_wrd_in_reg(reg)
     else:
-        words = ws.get_all_wrd()
+        word = request.GET.get('query')
+        tag = 0
+        if word != '' and word != None:
+            tag = 1
+            words = ws.get_first_5(word)
+        else:
+            words = ws.get_all_wrd()
 
     return render(request, 'main/index.html', {'words': words, 'tag': tag})
 
