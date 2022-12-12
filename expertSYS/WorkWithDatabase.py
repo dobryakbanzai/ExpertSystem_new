@@ -34,7 +34,7 @@ def read_info_from_bd():
 
 
 # Запись в бд
-def writing_info_in_bd(word, array, mylist):
+def writing_info_in_bd(word):
     with open('db.csv', 'a', newline='') as f:
         headersCSV = ['Северный-слово', 'Северный-значение', 'Центральный-слово', 'Центральный-значение', 'Южный-слово',
                       'Южный-значение', 'Новый-слово', 'Новый-значение', 'Россия-слово', 'Россия-значение']
@@ -51,9 +51,7 @@ def writing_info_in_bd(word, array, mylist):
             add_info('Россия', word, f, headersCSV)
 
     f.close()
-    mylist.append(word)
-    array.append(word)
-    return array, mylist
+    return
 
 
 def add_info(region, word, f, headerCSV):

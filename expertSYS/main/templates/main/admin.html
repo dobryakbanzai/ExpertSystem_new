@@ -6,69 +6,165 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-<!--<script>-->
-<!--    let user = prompt("user", '');-->
-<!--    let pass = prompt("pass", '')-->
-<!--    if(user != 'admin' || pass != 'admin'){-->
-<!--        alert("NOOOO")-->
-<!--        document.location.replace('http://127.0.0.1:8000/');-->
-<!--    }-->
-<!--</script>-->
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <form action="" method="get">
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control" name="query" placeholder="Search">
-                    <input type="hidden" name="search_by" value="name">
-                </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-outline-success">Search</button>
-                </div>
-            </div>
-        </form>
-        <form action="" method="get">
-            <div class="row">
-                <div class="col">
-                        <select name = "select" class="form-control">
-                            <option value="Всё">All</option>
-                            <option value="Северный">Nord</option>
-                            <option value="Центральный">Middle</option>
-                            <option value="Южный">South</option>
-                        </select>
-                    <input type="hidden" name="search_by" value="reg">
-                </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-outline-success">Search</button>
-                </div>
-            </div>
-        </form>
+<script>
+    let user = prompt("user", '');
+    let pass = prompt("pass", '')
+    if(user != 'admin' || pass != 'admin'){
+        alert("NOOOO")
+        document.location.replace('http://127.0.0.1:8000/');
+    }
+</script>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background: #000000">
+<!--        <form action="" method="get">-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <input type="text" class="form-control" name="query" placeholder="Search">-->
+<!--                    <input type="hidden" name="search_by" value="name">-->
+<!--                </div>-->
+<!--                <div class="col">-->
+<!--                    <button type="submit" class="btn btn-outline-success">Search</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--        <form action="" method="get">-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                        <select name = "select" class="form-control">-->
+<!--                            <option value="Всё">All</option>-->
+<!--                            <option value="Северный">Nord</option>-->
+<!--                            <option value="Центральный">Middle</option>-->
+<!--                            <option value="Южный">South</option>-->
+<!--                        </select>-->
+<!--                    <input type="hidden" name="search_by" value="reg">-->
+<!--                </div>-->
+<!--                <div class="col">-->
+<!--                    <button type="submit" class="btn btn-outline-success">Search</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
         <ul class="nav nav-pills" >
           <li class="nav-item"><a href="http://127.0.0.1:8000/manage" class="nav-link">Admin</a></li>
           <li class="nav-item"><a href="http://127.0.0.1:8000/" class="nav-link">User</a></li>
         </ul>
       </header>
-    <form action="" method="get">
-            <div class="row">
-                <div class="col">
-                        <select name = "select" class="form-control">
-                            <option value="Всё">All</option>
-                            <option value="Северный">Nord</option>
-                            <option value="Центральный">Middle</option>
-                            <option value="Южный">South</option>
-                        </select>
-                    <input type="hidden" name="search_by" value="reg">
+
+<div class="row">
+    <div class="col">
+        <form action="" method="get" name="add">
+
+        <label for="word">Word</label>
+        <div class="row" id="word_div">
+                <div class="col-lg">
+                    <input type="text" class="form-control" name="word" placeholder="WORD" id="word">
                 </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-outline-success">Search</button>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-outline-success" name="h_ch" value="NotNull">Check word</button>
                 </div>
+        </div>
+
+        <br>
+
+        <label for="mean">Mean</label>
+        <div class="row" id="mean">
+                <div class="col">
+                    <input type="text" class="form-control" name="mean" placeholder="MEAN">
+                </div>
+        </div>
+
+        <br>
+
+        <label for="region">Region</label>
+        <div class="row" id="region">
+            <div class="col">
+                <select name = "region" class="form-control">
+                    <option value="Россия">All Russia</option>
+                    <option value="Северный">Nord</option>
+                    <option value="Центральный">Middle</option>
+                    <option value="Южный">South</option>
+                    <option value="Новый">New</option>
+                </select>
+                <input type="hidden" name="search_by" value="reg">
             </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            Default checkbox
-            </label>
+        </div>
+
+        <br>
+
+        <label for="addition">Addition region</label>
+        <div class="row" id="addition">
+            <div class="col">
+                <input class="form-check-input" type="checkbox" value="Северный" name="n_d" id="n_d">
+                <label class="form-check-label" for="n_d">NORD</label>
+            </div>
+
+            <div class="col">
+                <input class="form-check-input" type="checkbox" value="Центральный" name="m_d" id="m_d">
+                <label class="form-check-label" for="m_d">MIDDLE</label>
+            </div>
+
+            <div class="col">
+                <input class="form-check-input" type="checkbox" value="Южный" name="s_d" id="s_d">
+                <label class="form-check-label" for="s_d">SOUTH</label>
+            </div>
+
+            <div class="col">
+                <input class="form-check-input" type="checkbox" value="Новый" name="ne_d" id="ne_d">
+                <label class="form-check-label" for="ne_d">NEW</label>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <button type="submit" class="btn btn-outline-success">ADD</button>
+<!--            <div class="col">-->
+<!--                <input class="form-check-input" type="checkbox" value="NotNull" name="h_ch" id="h_ch">-->
+<!--                <label class="form-check-label" for="h_ch">CHECK WORD</label>-->
+<!--            </div>-->
         </div>
     </form>
+    </div>
+
+    <div class="col">
+        {%if word.wrd == None or word.wrd == ""%}
+            <p>
+            </p>
+        {%else%}
+            <p>
+                Слово {{word.wrd}} совпадает с {{check.0}}
+                <br>
+                На {{check.3}} процентов
+                <br>
+                Вы уверены, что хотите добавить это слово?
+                <br>
+                <br>
+                Ваше слово:
+                <br>
+                {{word.wrd}}
+
+                <br>
+                Значение: {{word.mean}}
+
+                <br>
+                Регион: {{word.region}}
+
+                <br>
+                <br>
+                Слово, наденное в базе:
+                <br>
+                {{check.0}}
+                <br>
+
+                Значение: {{check.1}}
+
+                <br>
+                Регион: {{check.2}}
+            </p>
+        {%endif%}
+    </div>
+</div>
+
+
+
 
 </body>
 </html>
