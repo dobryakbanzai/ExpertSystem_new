@@ -10,16 +10,6 @@ import MyMap as map
 import main
 
 
-# Create your views here.
-# class HomePageView(TemplateView):
-#     template_name = "main/index.html"
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         search_by = self.request.GET.get('search_by')
-#
-#         return context
-
 def index(request):
     search_by = request.GET.get('search_by')
     if search_by == "reg":
@@ -104,33 +94,3 @@ def admin(request):
         result = Word(word, mean, region)
         wwd.writing_info_in_bd(result)
     return render(request, 'main/admin.html', {'word': word_send, 'check': checked_word})
-
-    # if word is None:
-    #     return render(request, 'main/admin.html')
-    # else:
-    #     # is_a = request.GET.get('is')
-    #     # if is_a == 1:
-    #
-    #     result = Word(word, mean, region)
-    #     most = ws.get_first_5(word)[0]
-    #
-    #     return render(request, 'main/confirm.html', {'result': result, 'most': most})
-
-
-# def confirmation(request):
-#     is_a = request.GET.get('is')
-#     print(is_a)
-#     if is_a :
-#         word = request.GET.get('word')
-#         print(word.wrd)
-#         wwd.writing_info_in_bd(word)
-#         return render(request, 'main/index.html')
-#     elif is_a == "0":
-#         return render(request, 'main/index.html')
-#     else:
-#         return render(request, 'main/confirm.html')
-
-# def postuser(request):
-#
-#     words = ws.get_first_5(searcher)
-#     return render(request, 'main/index.html', {'words': words})
