@@ -94,3 +94,7 @@ def admin(request):
         result = Word(word, mean, region)
         wwd.writing_info_in_bd(result)
     return render(request, 'main/admin.html', {'word': word_send, 'check': checked_word})
+
+
+def logpas(request):
+    return render(request, 'main/LogPas.html')

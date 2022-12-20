@@ -4,7 +4,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('manage/', views.admin),
+    path('manage/adms/', views.admin),
+    path('manage/', views.logpas)
     # path('checker/', WordSearch.get_first_5)
     # path('conf/', views.confirmation)
 ]

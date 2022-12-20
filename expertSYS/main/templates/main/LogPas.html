@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let user = prompt("user", '');
+    let pass = prompt("pass", '')
+    if(user != 'admin' || pass != 'admin'){
+        alert("NOOOO")
+        document.location.replace('http://127.0.0.1:8000/');
+    }else {
+        document.location.replace('http://127.0.0.1:8000/manage/adms/');
+    }
+</script>
+
+</body>
+</html>
