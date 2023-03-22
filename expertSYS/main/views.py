@@ -15,17 +15,14 @@ def index(request):
     if search_by == "reg":
         reg = request.GET.get('select')
         tag = 1
-        if reg == "Северный":
-            map.get_html_north()
+        if reg == "Стекольный отдел":
+            map.get_html_glass()
             time.sleep(3)
-        elif reg == "Южный":
-            map.get_html_south()
+        elif reg == "Отдел корпусов":
+            map.get_html_body()
             time.sleep(3)
-        elif reg == "Центральный":
-            map.get_html_avarage()
-            time.sleep(3)
-        elif reg == "Новый":
-            map.get_html_new()
+        elif reg == "Топливный отдел":
+            map.get_html_fuel()
             time.sleep(3)
         else:
             map.get_html_all()
@@ -41,17 +38,14 @@ def index(request):
         if word != '' and word != None:
             tag = 1
             words = ws.get_first_5(word)
-            if words[0][2] == "Северный":
-                map.get_html_north()
+            if words[0][2] == "Стекольный отдел":
+                map.get_html_glass()
                 time.sleep(3)
-            elif words[0][2] == "Южный":
-                map.get_html_south()
+            elif words[0][2] == "Отдел корпусов":
+                map.get_html_body()
                 time.sleep(3)
-            elif words[0][2] == "Центральный":
-                map.get_html_avarage()
-                time.sleep(3)
-            elif words[0][2] == "Новый":
-                map.get_html_new()
+            elif words[0][2] == "Топливный отдел":
+                map.get_html_fuel()
                 time.sleep(3)
             else:
                 map.get_html_all()

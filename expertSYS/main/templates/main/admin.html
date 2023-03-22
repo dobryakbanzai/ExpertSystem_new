@@ -48,7 +48,7 @@
         <label for="word">Word</label>
         <div class="row" id="word_div">
                 <div class="col-lg">
-                    <input type="text" class="form-control" name="word" placeholder="WORD" id="word">
+                    <input type="text" class="form-control" name="word" placeholder="ELEMENT" id="word">
                 </div>
                 <div class="col-sm">
                     <button type="submit" class="btn btn-outline-success" name="h_ch" value="NotNull">Check word</button>
@@ -70,11 +70,9 @@
         <div class="row" id="region">
             <div class="col">
                 <select name = "region" class="form-control">
-                    <option value="Россия">All Russia</option>
-                    <option value="Северный">Nord</option>
-                    <option value="Центральный">Middle</option>
-                    <option value="Южный">South</option>
-                    <option value="Новый">New</option>
+                    <option value="Стекольный отдел">Glass department</option>
+                    <option value="Отдел корпусов">Body department</option>
+                    <option value="Топливный отдел">Fuel department</option>
                 </select>
                 <input type="hidden" name="search_by" value="reg">
             </div>
@@ -85,24 +83,20 @@
         <label for="addition">Addition region</label>
         <div class="row" id="addition">
             <div class="col">
-                <input class="form-check-input" type="checkbox" value="Северный" name="n_d" id="n_d">
-                <label class="form-check-label" for="n_d">NORD</label>
+                <input class="form-check-input" type="checkbox" value="Стекольный отдел" name="n_d" id="n_d">
+                <label class="form-check-label" for="n_d">Glass department</label>
             </div>
 
             <div class="col">
-                <input class="form-check-input" type="checkbox" value="Центральный" name="m_d" id="m_d">
-                <label class="form-check-label" for="m_d">MIDDLE</label>
+                <input class="form-check-input" type="checkbox" value="Отдел корпусов" name="m_d" id="m_d">
+                <label class="form-check-label" for="m_d">Body department</label>
             </div>
 
             <div class="col">
-                <input class="form-check-input" type="checkbox" value="Южный" name="s_d" id="s_d">
-                <label class="form-check-label" for="s_d">SOUTH</label>
+                <input class="form-check-input" type="checkbox" value="Топливный отдел" name="s_d" id="s_d">
+                <label class="form-check-label" for="s_d">Fuel department</label>
             </div>
 
-            <div class="col">
-                <input class="form-check-input" type="checkbox" value="Новый" name="ne_d" id="ne_d">
-                <label class="form-check-label" for="ne_d">NEW</label>
-            </div>
         </div>
 
         <br>
@@ -123,34 +117,30 @@
             </p>
         {%else%}
             <p>
-                Слово {{word.wrd}} совпадает с {{check.0}}
+                The element {{word.wrd}} matches with {{check.0}}
                 <br>
-                На {{check.3}} процентов
+                By {{check.3}} percent
                 <br>
-                Вы уверены, что хотите добавить это слово?
+                Are you sure you want to add this word?
                 <br>
                 <br>
-                Ваше слово:
-                <br>
-                {{word.wrd}}
+                Your element: <b>{{word.wrd}}</b>
 
                 <br>
-                Значение: {{word.mean}}
+                Means: {{word.mean}}
 
                 <br>
-                Регион: {{word.region}}
+                Region: {{word.region}}
 
                 <br>
                 <br>
-                Слово, наденное в базе:
-                <br>
-                {{check.0}}
+                The word found in the database:  <b>{{check.0}}</b>
                 <br>
 
-                Значение: {{check.1}}
+                Means: {{check.1}}
 
                 <br>
-                Регион: {{check.2}}
+                Region: {{check.2}}
             </p>
         {%endif%}
     </div>

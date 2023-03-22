@@ -1,16 +1,14 @@
-# mas = []
-#
-# mas.append(('hui', 'zalupa'))
-# mas.append(('hui', 'penis'))
-#
-# for i in range(len(mas)):
-#     print(mas[i][0])
+from fuzzywuzzy import fuzz as f 
+from fuzzywuzzy import process as p
 
-slov = {'hui': [],
-        'penis': []}
 
-slov['hui'].append(5)
-slov['hui'].append(6)
-slov['hui'].append(10)
-
-print(slov.get('hui'))
+print("Фюзеляж", f.ratio("Фюзлж", "Фюзеляж"))
+print(f.ratio("Фюзлж", "Горизонтальное оперение"), "Горизонтальное оперение")
+print(f.ratio("Фюзлж", "Вертикальное оперение"), "Вертикальное оперение")
+print(f.ratio("Фюзлж", "Крыло"), "Крыло")
+print(f.ratio("Фюзлж", "Диз.топ."), "Диз.топ.")
+print(f.ratio("Фюзлж", "Газотурбинный двигатель"), "Газотурбинный двигатель")
+print(f.ratio("Фюзлж", "Муфты свободного хода"), "Муфты свободного хода")
+print(f.ratio("Фюзлж", "Лопасть"), "Лопасть")
+print(f.ratio("Фюзлж", "Иллюминатор"), "Иллюминатор")
+print(f.ratio("Фюзлж", "Лобовое стекло"), "Лобовое стекло")
